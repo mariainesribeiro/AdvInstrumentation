@@ -1,0 +1,83 @@
+<html>
+	
+	<head>
+		<!-- Importing files to be served by our web server when we access the HMTL page  
+    		- the charting library, in this case chartist.js
+    		- w3.css and style.css to customize the presentation
+    		- script.js to display the dynamic countdown, the classification and 
+    		   for communication with the server
+        -->
+		<!-- The source of these files is static/XXX.  -->
+                <title>Workout</title> 		
+                <link rel="stylesheet" type="text/css" href="static/chartist.min.css">
+                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+		        <script language="javascript" type="text/javascript" src="static/chartist.min.js"></script>
+		  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  		        <script src="static/script.js"></script>
+                <meta name = "Author" content = "Ana Filipa Rebelo and Maria Ines Ribeiro"> 
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+                <link href="static/style.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body>
+            <!-- ############### APPLICATION ###################-->
+                <div id="app">
+
+		    <h2>Fit Timer</h2>
+
+		    <p class="controls">
+		         <input type="hidden" id="intervalTime" value="20" /> 
+                 <input type="hidden" id="breakTime" value="10" />
+                 <!-- IP address of virtual machine -->
+		         Raspberry IP:
+		         <input style:'display:inline' type="text" value='' id='raspIP'>
+                 <br><br>
+                 <!--number of training sets the user desires to perform -->
+                 Number of sets:
+		         <input type="text" id="n_sets" name="n_sets" style="display:inline;width:3em">
+                 <br><br>
+                 <!--this button launches the communication to the server and starts the countdown -->
+                 <input type="button" style='display:inline' id= "start" onclick=raspConnect() value="Start Workout">
+                 <!-- this button stops the countdown and ends the acquisition of the accelerometer, at the server -->
+		         <input type="button" id="give_up" value="Give up">
+		         <!--this button launches resets the timer to allow a new workout -->
+                 <input type="button" id="reset_train" value="Reset train">
+		    </p>
+		    <div class = "w3-row-padding controls" style="padding-top:2.5em">
+                            <div class="w3-row">
+				    <div class="w3-col s5 w3-center">
+    				    <!--this paragraph displays the type of segment of the workout 
+    				    ("Welcome", "Get Ready!", "Go!", "Rest", "U gave up :(" ) -->
+					    <h1 id="status">Welcome</h1>
+					    <!--countdown-->
+					    <p class="large"><span id="sec">10</span></p>
+					    <p><button style="display: none" id="reset">Reset</button></p>
+				    </div>
+				    <div class="w3-col s2 w3-center"><p> </p></div>
+				    <div class="w3-col s2 w3-center" id="exercise"></div>
+                            </div>
+		    </div>
+
+		<!-- Creates a simple div to render the chart with accelerometer data, online -->
+		<div class = "w3-row-padding" style="height:35%;">
+                        <div class="w3-row">
+			  <p>Acelerometer data</p>
+			  <div class="w3-col w3-center" id="chart"></div>
+			</div>
+		</div>
+	        <div class = "w3-row-padding">
+			<p style="font-size:1em;">
+		            <span style="color:#f4c63d;">• X axis</span>
+			    <span style="color:#f05b4f;">• Y axis</span>
+			    <span style="color:#d70206;">• Z axis</span>
+		       </p>
+                </div>
+
+
+	</div>
+	</body>
+</html>
