@@ -1,0 +1,74 @@
+<html>
+	
+	<head>
+		<!-- Import the charting library, in this case chartist.js -->
+		<!-- The source of these files is static/XXX.  These files will be
+		served by our web server when we access the HMTL page -->
+                <title>Workout</title> 		
+                <link rel="stylesheet" type="text/css" href="static/chartist.min.css">
+                <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+		<script language="javascript" type="text/javascript" src="static/chartist.min.js"></script>
+                <meta name = "Author" content = "Ana Filipa Rebelo and Maria Ines Ribeiro"> 
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+                <!-- Links of css font -->
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+                <link href="static/style.css" rel="stylesheet" type="text/css">
+                <link rel="icon" href="static/favicon.ico" sizes="16x16 32x32" type="image/png">
+	</head>
+	
+	<body>
+		<!-- This is a simple form for you to input the IP address of your
+		raspberry -->
+                <header class="w3-bar"> <img class="w3-bar-item" src="static/logo_square_blue.png" style = "width: 15vw"> </header>
+                <div id="app">
+
+		    <h2>HIIT Timer</h2>
+
+		    <p class="controls">
+		      <input type="hidden" id="intervalTime" value="20" />
+                      <input type="hidden" id="breakTime" value="10" />
+		      Raspberry IP:
+		      <input style:'display:inline' type="text" value='' id='raspIP'>
+                      Number of sets:
+		      <input type="text" id="n_sets" name="n_sets">
+                      <input type="button" style:'display:inline' id= "start" onclick=raspConnect() value="Start Workout"><br>
+		    </p>
+
+		    <h1 id="status">Rest</h1>
+
+		    <p class="large"><span id="sec">10</span></p>
+
+		    <p>
+		      <button id="give_up">Give up!</button>
+		    </p>
+		    <p>
+		      <button id="reset">Reset</button>
+		    </p>
+
+
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  		<script src="static/script.js"></script>
+		<form style='height:5%'>
+			<!--Raspberry IP:<br>-->
+			<!--<input style:'display:inline' type="text" value='' id='raspIP'>-->
+                        <!--Number of sets:<br>-->
+			<!--<input type="number" id="n_sets" step='1'>-->
+                        <!--<input style:'display:inline' type="button" onclick=raspConnect() value="Start Workout"><br>-->
+ 			<!--<input style:'display:inline' type="button" onclick=stop() value="Give up"><br>-->
+		</form>
+		<!-- Creates a simple div to render your chart -->
+		
+		<div class = "w3-row-padding" style="height:20%;">
+                        <div class="w3-row">
+			  <div class="w3-col s8 w3-center" id="chart"></div>
+			  <div class="w3-col s4 w3-center" id="exercise"></div>
+			</div>
+		</div>
+
+
+	</div>
+	</body>
+</html>
