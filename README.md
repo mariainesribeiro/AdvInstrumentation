@@ -12,7 +12,12 @@ Firstly, the aim is to create, in offline mode, a dataset with several collectio
 
 ## Contents
 ### Code
-Contains the code developed
+Contains the code developed.
 Employed languages: python, javascript, html, css
 ### DemoImages
 Contains images of a demo.
+
+## Acknowledgements
+
+This project was created under the Nova Advanced Instrumentation Applications Course//
+Supervised by Prof. Hugo Gamboa (https://github.com/hgamboa)
