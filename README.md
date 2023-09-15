@@ -2,7 +2,7 @@
 Real-time physical exercise classifier and repetition counter.
 
 ## Goal
-Create a real-time classification system for three types of physical exercises - squats, push-ups and lunges - and count the repetitions of each one.
+Create a real-time classification mobile web system for three types of physical exercises - squats, push-ups and lunges - and count the repetitions of each one.
 
 ## Scope 
 Signals are acquired by the accelerometer of an Android device, and sent to a Linux virtual machine, wirelessly, through the Sensor Droid app.
